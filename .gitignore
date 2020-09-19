@@ -1,0 +1,8 @@
+build
+build-mingw64
+build-mingw32
+build-wasm
+.vimproject
+compile_commands.json
+.cache
+src/bindings.c

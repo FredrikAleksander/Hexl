@@ -1,0 +1,7 @@
+#pragma once
+#ifndef __HEXL__CONFIG_H
+#define __HEXL__CONFIG_H
+
+#cmakedefine HEXL_USE_FREETYPE
+
+#endif

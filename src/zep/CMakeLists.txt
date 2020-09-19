@@ -1,0 +1,62 @@
+SET(ZEP_SOURCES
+	include/zep/buffer.h
+	include/zep/glyph_iterator.h
+	include/zep/commands.h
+	include/zep/display.h
+	include/zep/editor.h
+	include/zep/filesystem.h
+	include/zep/indexer.h
+	include/zep/keymap.h
+	include/zep/line_widgets.h
+	include/zep/mcommon/animation/timer.h
+	include/zep/mcommon/file/cpptoml.h
+	include/zep/mcommon/file/path.h
+	include/zep/mcommon/logger.h
+	include/zep/mcommon/string/stringutils.h
+	include/zep/mcommon/threadutils.h
+	include/zep/mode.h
+	include/zep/mode_search.h
+	include/zep/mode_standard.h
+	include/zep/mode_tree.h
+	include/zep/mode_vim.h
+	include/zep/regress.h
+	include/zep/scroller.h
+	include/zep/splits.h
+	include/zep/syntax.h
+	include/zep/syntax_providers.h
+	include/zep/syntax_rainbow_brackets.h
+	include/zep/syntax_tree.h
+	include/zep/tab_window.h
+	include/zep/theme.h
+	include/zep/window.h
+	src/buffer.cpp
+	src/glyph_iterator.cpp
+	src/commands.cpp
+	src/display.cpp
+	src/editor.cpp
+	src/filesystem.cpp
+	src/indexer.cpp
+	src/keymap.cpp
+	src/line_widgets.cpp
+	src/mcommon/animation/timer.cpp
+	src/mcommon/file/path.cpp
+	src/mcommon/string/stringutils.cpp
+	src/mode.cpp
+	src/mode_search.cpp
+	src/mode_standard.cpp
+	src/mode_tree.cpp
+	src/mode_vim.cpp
+	src/regress.cpp
+	src/scroller.cpp
+	src/splits.cpp
+	src/syntax.cpp
+	src/syntax_providers.cpp
+	src/syntax_rainbow_brackets.cpp
+	src/syntax_tree.cpp
+	src/tab_window.cpp
+	src/theme.cpp
+	src/window.cpp
+)
+add_library(zep STATIC ${ZEP_SOURCES})
+target_include_directories(zep PRIVATE ${ZEP_ROOT})
+target_compile_definitions(Hexl PRIVATE ZEP_FEATURE_CPP_FILE_SYSTEM)

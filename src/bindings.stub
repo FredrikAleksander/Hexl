@@ -1,0 +1,18 @@
+(c-system-include "api/runtime-api.hpp")
+
+(define-c errno (runtime/get-runtime-pref-path "hexl_api_get_runtime_pref_path") ((result (array char (auto-expand arg1))) (value 256 int)))
+(define-c void  (runtime/add-runtime-path "hexl_api_add_runtime_path") (string)) 
+(define-c errno (runtime/resolve-runtime-path "hexl_api_resolve_runtime_path") (string (result (array char (auto-expand arg2))) (value 256 int)))
+(define-c void  (runtime/exit "hexl_api_exit") ((default 0 int)))
+
+(define-c void  (runtime/use-text-editor "hexl_api_use_text_editor") (string))
+(define-c void  (runtime/open-text-editor "hexl_api_open_text_editor") (string (default -1 int)))
+
+(define-c errno (runtime/add-font "hexl_api_add_font") (string float int (array unsigned-short null)))
+(define-c void  (runtime/set-theme-color "hexl_api_set_theme_color") (string (array float 4)))
+(define-c void  (runtime/set-theme-flag "hexl_api_set_theme_flag") (string boolean))
+(define-c void  (runtime/set-theme-scalar "hexl_api_set_theme_scalar") (string float))
+(define-c void  (runtime/set-theme-vec2 "hexl_api_set_theme_vec2") (string (array float 2)))
+(define-c void  (runtime/set-theme-vec3 "hexl_api_set_theme_vec3") (string (array float 3)))
+(define-c void  (runtime/set-theme-vec4 "hexl_api_set_theme_vec4") (string (array float 4)))
+
